@@ -41,7 +41,8 @@ module TwitterCldr
   TWITTER_LOCALE_MAP = {
       :msa     => :ms,
       :'zh-cn' => :zh,
-      :'zh-tw' => :'zh-Hant'
+      :'zh-tw' => :'zh-Hant',
+      :no      => :nb
   }
 
   # maps cldr locales to twitter locales
@@ -82,6 +83,7 @@ module TwitterCldr
     end
 
     def supported_locale?(locale)
+      return false unless locale
       locale = locale.to_sym
       supported_locales.include?(locale) || supported_locales.include?(convert_locale(locale))
     end
