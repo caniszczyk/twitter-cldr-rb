@@ -6,7 +6,7 @@
 module TwitterCldr
   module Js
     class Compiler
-      ALL_JS_FEATURES = [:calendars]
+      ALL_JS_FEATURES = [:datetime, :timespan]
 
       def initialize(options = {})
         @locales = options[:locales] || TwitterCldr.supported_locales
@@ -32,8 +32,10 @@ module TwitterCldr
 
       def get_renderer_const(feature)
         case feature
-          when :calendars
+          when :datetime
             TwitterCldr::Js::Renderers::Calendars::DateTimeRenderer
+          when :timespan
+            TwitterCldr::Js::Renderers::Calendars::TimespanRenderer
           else
             nil
         end

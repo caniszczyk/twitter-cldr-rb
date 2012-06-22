@@ -13,7 +13,9 @@ require 'json'
 
 require 'compiler'
 require 'renderers/bundle'
+require 'renderers/base'
 require 'renderers/calendars/datetime_renderer'
+require 'renderers/calendars/timespan_renderer'
 
 module TwitterCldr
   module Js

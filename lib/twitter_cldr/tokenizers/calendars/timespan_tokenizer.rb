@@ -6,6 +6,8 @@
 module TwitterCldr
   module Tokenizers
     class TimespanTokenizer < Base
+      VALID_UNITS = [:second, :minute, :hour, :day, :week, :month, :year]
+
       def initialize(options = {})
         super(options)
 
@@ -43,7 +45,7 @@ module TwitterCldr
 
       def tokens(options = {})
         path = full_path(options[:direction], options[:unit] || :default)
-        pluralization = TwitterCldr::Formatters::Plurals::Rules.rule_for(options[:number], @locale)
+        pluralization = options[:rule] || TwitterCldr::Formatters::Plurals::Rules.rule_for(options[:number], @locale)
 
         case pluralization # sometimes the plural rule will return ":one" when the resource only contains a path with "1"
           when :zero
