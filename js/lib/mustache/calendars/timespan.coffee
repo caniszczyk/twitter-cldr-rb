@@ -3,8 +3,6 @@
 
 TwitterCldr.TimespanFormatter = class TimespanFormatter
 	constructor: ->
-		@ago = 0
-		@until = 1
 		@tokens = `{{{tokens}}}`
 		@time_in_seconds = { 
 			"second": 1,
@@ -16,16 +14,17 @@ TwitterCldr.TimespanFormatter = class TimespanFormatter
 			"year":   31556926
 		}
 
-	format: (seconds, unit) ->
-		direction = if seconds < 0 then @ago else @until
+	format: (seconds, options = {}) ->
+		direction = if seconds < 0 then "ago" else "until"
+		unit = options["unit"]
 
-		if unit == null || unit == "default"
+		if unit is null or unit is undefined or unit is "default"
 			unit = this.calculate_unit(Math.abs(seconds))
 
-		number = calculate_time(Math.abs(seconds), unit)
-		rule = "one"  # hard-coded for now - need TwitterCldr.PluralRules
+		number = this.calculate_time(Math.abs(seconds), unit)
+		rule = TwitterCldr.PluralRules.rule_for(number)
 
-		strings = @tokens[direction][unit][rule]
+		strings = (token.value for token in @tokens[direction][unit][rule])
 		return strings.join("").replace(/\{[0-9]\}/, number.toString())
 
 	calculate_unit: (seconds) ->

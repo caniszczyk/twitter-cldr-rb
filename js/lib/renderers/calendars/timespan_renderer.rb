@@ -24,7 +24,7 @@ module TwitterCldr
                 direction_hash
               end
               final
-            end
+            end.to_json
           end
 
         end

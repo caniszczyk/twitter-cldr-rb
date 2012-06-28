@@ -14,8 +14,11 @@ require 'json'
 require 'compiler'
 require 'renderers/bundle'
 require 'renderers/base'
+
 require 'renderers/calendars/datetime_renderer'
 require 'renderers/calendars/timespan_renderer'
+require 'renderers/plurals/rules/plural_rules_compiler'
+require 'renderers/plurals/rules/plural_rules_renderer'
 
 module TwitterCldr
   module Js

@@ -6,7 +6,7 @@
 module TwitterCldr
   module Js
     class Compiler
-      ALL_JS_FEATURES = [:datetime, :timespan]
+      ALL_JS_FEATURES = [:plural_rules, :timespan]#[:datetime]
 
       def initialize(options = {})
         @locales = options[:locales] || TwitterCldr.supported_locales
@@ -36,6 +36,8 @@ module TwitterCldr
             TwitterCldr::Js::Renderers::Calendars::DateTimeRenderer
           when :timespan
             TwitterCldr::Js::Renderers::Calendars::TimespanRenderer
+          when :plural_rules
+            TwitterCldr::Js::Renderers::PluralRules::PluralRulesRenderer
           else
             nil
         end
