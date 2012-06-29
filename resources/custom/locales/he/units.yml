@@ -1,0 +1,14 @@
+--- 
+he: 
+  days: 
+    one: "{0}d"
+    other: "{0}d"
+  hours: 
+    one: "{0} שעות"
+    other: "{0} שעות"
+  minutes: 
+    one: "{0} דקות"
+    other: "{0} דקות"
+  seconds: 
+    one: "{0} שניות"
+    other: "{0} שניות"

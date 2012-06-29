@@ -1,0 +1,10 @@
+--- 
+id: 
+  days: 
+    other: "{0} hari"
+  hours: 
+    other: "{0} jam"
+  minutes: 
+    other: "{0} menit"
+  seconds: 
+    other: "{0} detik"

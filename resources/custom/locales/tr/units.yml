@@ -1,0 +1,10 @@
+--- 
+tr: 
+  days: 
+    other: "{0} gün"
+  hours: 
+    other: "{0} sa"
+  minutes: 
+    other: "{0} dk"
+  seconds: 
+    other: "{0} sn"

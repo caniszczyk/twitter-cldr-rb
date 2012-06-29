@@ -1,0 +1,10 @@
+--- 
+zh-cn: 
+  days: 
+    other: "{0}天"
+  hours: 
+    other: "{0}时"
+  minutes: 
+    other: "{0}分"
+  seconds: 
+    other: "{0}秒"

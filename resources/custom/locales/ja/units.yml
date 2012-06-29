@@ -1,0 +1,10 @@
+--- 
+ja: 
+  days: 
+    other: "{0}日"
+  hours: 
+    other: "{0}時間"
+  minutes: 
+    other: "{0}分"
+  seconds: 
+    other: "{0}秒"

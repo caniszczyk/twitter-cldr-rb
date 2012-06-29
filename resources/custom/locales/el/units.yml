@@ -1,0 +1,14 @@
+--- 
+el: 
+  days: 
+    one: "{0}μ"
+    other: "{0}μ"
+  hours: 
+    one: "{0}ω"
+    other: "{0}ω"
+  minutes: 
+    one: "{0}λ"
+    other: "{0}λ"
+  seconds: 
+    one: "{0}δ"
+    other: "{0}δ"

@@ -1,0 +1,10 @@
+--- 
+ko: 
+  days: 
+    other: "{0}일"
+  hours: 
+    other: "{0}시"
+  minutes: 
+    other: "{0}분"
+  seconds: 
+    other: "{0}초"

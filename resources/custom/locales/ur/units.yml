@@ -1,0 +1,14 @@
+--- 
+ur: 
+  days: 
+    one: "{0} دن"
+    other: "{0} دن"
+  hours: 
+    one: "{0} گھنٹے"
+    other: "{0} گھنٹے"
+  minutes: 
+    one: "{0} منٹ"
+    other: "{0} منٹ"
+  seconds: 
+    one: "{0} سیکنڈ"
+    other: "{0} سیکنڈ"

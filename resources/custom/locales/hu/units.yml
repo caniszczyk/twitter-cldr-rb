@@ -1,0 +1,10 @@
+--- 
+hu: 
+  days: 
+    other: "{0}n"
+  hours: 
+    other: "{0}ó"
+  minutes: 
+    other: "{0}p"
+  seconds: 
+    other: "{0}mp"

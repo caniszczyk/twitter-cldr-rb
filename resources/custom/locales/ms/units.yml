@@ -1,0 +1,10 @@
+--- 
+msa: 
+  days: 
+    other: "{0}h"
+  hours: 
+    other: "{0}j"
+  minutes: 
+    other: "{0} minit"
+  seconds: 
+    other: "{0} saat"

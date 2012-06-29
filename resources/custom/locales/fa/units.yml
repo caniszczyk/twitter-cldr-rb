@@ -1,0 +1,10 @@
+--- 
+fa: 
+  days: 
+    other: "{0} روز"
+  hours: 
+    other: "{0} ساعت"
+  minutes: 
+    other: "{0} دقیقه"
+  seconds: 
+    other: "{0} ثانیه"

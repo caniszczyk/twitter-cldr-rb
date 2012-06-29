@@ -1,0 +1,14 @@
+--- 
+fr: 
+  days: 
+    one: "{0}j"
+    other: "{0}j"
+  hours: 
+    one: "{0}h"
+    other: "{0}h"
+  minutes: 
+    one: "{0}min"
+    other: "{0}min"
+  seconds: 
+    one: "{0}s"
+    other: "{0}s"

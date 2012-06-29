@@ -1,0 +1,10 @@
+--- 
+th: 
+  days: 
+    other: "{0} วัน"
+  hours: 
+    other: "{0} ชม."
+  minutes: 
+    other: "{0} นาที"
+  seconds: 
+    other: "{0} วินาที"
