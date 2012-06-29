@@ -40,7 +40,7 @@ module TwitterCldr
 
             def _call(tree)
               case tree[2]
-                when :==, :%  # special operators that actually resolve to method calls
+                when :==, :%, :<, :>  # special operators that actually resolve to method calls
                   "#{statement_list(tree[1])} #{tree[2].to_s} #{statement_list(tree[3])}"
                 when :include?
                   "#{statement_list(tree[1])}.indexOf(#{statement_list(tree[3])}) >= 0"

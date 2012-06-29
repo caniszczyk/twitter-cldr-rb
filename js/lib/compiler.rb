@@ -6,7 +6,7 @@
 module TwitterCldr
   module Js
     class Compiler
-      ALL_JS_FEATURES = [:plural_rules, :timespan]#[:datetime]
+      ALL_JS_FEATURES = [:plural_rules, :timespan, :datetime]
 
       def initialize(options = {})
         @locales = options[:locales] || TwitterCldr.supported_locales

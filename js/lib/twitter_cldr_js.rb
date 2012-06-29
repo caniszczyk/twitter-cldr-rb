@@ -65,7 +65,7 @@ module TwitterCldr
 
     def self.test
       Dir.chdir(File.dirname(__FILE__)) do
-        Jasmine::Headless::Runner.run(:colors => true, :jasmine_config => File.expand_path("../spec/support/jasmine.yml"))
+        Jasmine::Headless::Runner.run(:colors => true, :jasmine_config => File.expand_path("../spec/js/support/jasmine.yml"))
       end
     end
 

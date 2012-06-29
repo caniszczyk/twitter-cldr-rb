@@ -1,3 +1,7 @@
+=== 1.5.5
+
+* Added JavaScript relative time functionality, eg. "2 seconds ago".
+
 === 1.5.0
 
 * Added collation (sorting) support via the Unicode Collation Algorithm.
