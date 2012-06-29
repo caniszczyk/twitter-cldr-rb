@@ -4,7 +4,7 @@
 TwitterCldr.TimespanFormatter = class TimespanFormatter
 	constructor: ->
 		@tokens = `{{{tokens}}}`
-		@time_in_seconds = { 
+		@time_in_seconds = {
 			"second": 1,
 			"minute": 60,
 			"hour":   3600,
