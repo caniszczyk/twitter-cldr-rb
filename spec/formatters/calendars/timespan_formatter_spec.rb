@@ -14,25 +14,25 @@ describe TimespanFormatter do
 
     describe "#ago" do
       it "works for a variety of units" do
-        formatter.format(-3273932, :year).should == 'Vor 0 Jahren'
-        formatter.format(-3273932, :month).should == 'Vor 1 Monat'
-        formatter.format(-3273932, :week).should == 'Vor 5 Wochen'
-        formatter.format(-3273932, :day).should == 'Vor 37 Tagen'
-        formatter.format(-3273932, :hour).should == 'Vor 909 Stunden'
-        formatter.format(-3273932, :minute).should == 'Vor 54565 Minuten'
-        formatter.format(-3273932, :second).should == 'Vor 3273932 Sekunden'
+        formatter.format(-3273932, :unit => :year).should match_normalized('Vor 0 Jahren')
+        formatter.format(-3273932, :unit => :month).should match_normalized('Vor 1 Monat')
+        formatter.format(-3273932, :unit => :week).should match_normalized('Vor 5 Wochen')
+        formatter.format(-3273932, :unit => :day).should match_normalized('Vor 37 Tagen')
+        formatter.format(-3273932, :unit => :hour).should match_normalized('Vor 909 Stunden')
+        formatter.format(-3273932, :unit => :minute).should match_normalized('Vor 54565 Minuten')
+        formatter.format(-3273932, :unit => :second).should match_normalized('Vor 3273932 Sekunden')
       end
     end
 
     describe "#until" do
       it "works for a variety of units" do
-        formatter.format(3273932, :year).should == 'In 0 Jahren'
-        formatter.format(3273932, :month).should == 'In 1 Monat'
-        formatter.format(3273932, :week).should == 'In 5 Wochen'
-        formatter.format(3273932, :day).should == 'In 37 Tagen'
-        formatter.format(3273932, :hour).should == 'In 909 Stunden'
-        formatter.format(3273932, :minute).should == 'In 54565 Minuten'
-        formatter.format(3273932, :second).should == 'In 3273932 Sekunden'
+        formatter.format(3273932, :unit => :year).should match_normalized('In 0 Jahren')
+        formatter.format(3273932, :unit => :month).should match_normalized('In 1 Monat')
+        formatter.format(3273932, :unit => :week).should match_normalized('In 5 Wochen')
+        formatter.format(3273932, :unit => :day).should match_normalized('In 37 Tagen')
+        formatter.format(3273932, :unit => :hour).should match_normalized('In 909 Stunden')
+        formatter.format(3273932, :unit => :minute).should match_normalized('In 54565 Minuten')
+        formatter.format(3273932, :unit => :second).should match_normalized('In 3273932 Sekunden')
       end
     end
   end

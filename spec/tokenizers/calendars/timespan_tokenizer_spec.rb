@@ -12,7 +12,7 @@ describe TimespanTokenizer do
   describe "#tokens" do
 
     it "should return the correct list of tokens" do
-      tokenizer = TimespanTokenizer.new(:locale => :es)
+      tokenizer = TimespanTokenizer.new(:locale => :es, :type => :default)
       got       = tokenizer.tokens(:unit => :minute, :direction => :ago, :number => 7659)
 
       got[0].should == { :value => "Hace ", :type => :plaintext }
