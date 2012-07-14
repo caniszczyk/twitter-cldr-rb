@@ -22,9 +22,9 @@ module TwitterCldr
 
             def statement_list(tree)
               if tree.first == :block
-                tree[1..-1].map { |sub_tree| send(:"_#{sub_tree.first.to_s}", sub_tree) }.join(" ")
+                tree[1..-1].map { |sub_tree| send(:"_#{sub_tree.first}", sub_tree) }.join(" ")
               else
-                send(:"_#{tree.first.to_s}", tree)
+                send(:"_#{tree.first}", tree)
               end
             end
 
@@ -41,12 +41,12 @@ module TwitterCldr
             def _call(tree)
               case tree[2]
                 when :==, :%, :<, :>  # special operators that actually resolve to method calls
-                  "#{statement_list(tree[1])} #{tree[2].to_s} #{statement_list(tree[3])}"
+                  "#{statement_list(tree[1])} #{tree[2]} #{statement_list(tree[3])}"
                 when :include?
                   "#{statement_list(tree[1])}.indexOf(#{statement_list(tree[3])}) >= 0"
                 else
                   # this should be the only case where tree[1] might be nil (i.e. the method was not called on any object)
-                  call = tree[1] ? "#{statement_list(tree[1])}.#{tree[2].to_s}" : tree[2].to_s
+                  call = tree[1] ? "#{statement_list(tree[1])}.#{tree[2]}" : tree[2].to_s
                   arglist = statement_list(tree[3])
                   arglist == "" ? call : "#{call}(#{arglist})"
               end
@@ -58,7 +58,7 @@ module TwitterCldr
 
             def _lit(tree)
               if tree[1].is_a?(Symbol) || tree[1].is_a?(String)
-                "\"#{tree[1].to_s}\""
+                "\"#{tree[1]}\""
               else
                 tree[1]
               end

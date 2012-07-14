@@ -25,23 +25,23 @@ TwitterCldr.TimespanFormatter = class TimespanFormatter
 		rule = TwitterCldr.PluralRules.rule_for(number)
 
 		strings = (token.value for token in @tokens[direction][unit][rule])
-		return strings.join("").replace(/\{[0-9]\}/, number.toString())
+		strings.join("").replace(/\{[0-9]\}/, number.toString())
 
 	calculate_unit: (seconds) ->
 		if seconds < 30
-			return "second"
+			"second"
 		else if seconds < 2670
-			return "minute"
+			"minute"
 		else if seconds < 86369
-			return "hour"
+			"hour"
 		else if seconds < 604800
-			return "day"
+			"day"
 		else if seconds < 2591969
-			return "week"
+			"week"
 		else if seconds < 31556926
-			return "month"
+			"month"
 		else
-			return "year"
+			"year"
 
 	# 0 <-> 29 secs                                                   # => seconds
 	# 30 secs <-> 44 mins, 29 secs                                    # => minutes
@@ -50,4 +50,4 @@ TwitterCldr.TimespanFormatter = class TimespanFormatter
 	# 29 days, 23 hrs, 59 mins, 29 secs <-> 1 yr minus 1 sec          # => months
 	# 1 yr <-> max time or date                                       # => years
 	calculate_time: (seconds, unit) ->
-		return Math.round(seconds / @time_in_seconds[unit])
+		Math.round(seconds / @time_in_seconds[unit])
