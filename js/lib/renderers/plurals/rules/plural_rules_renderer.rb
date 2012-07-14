@@ -16,7 +16,7 @@ module TwitterCldr
             rule_str = ruby_str.scan(/lambda\s*\{\s*\|n\|(.*?)\}/).first.first.strip
             js_str = PluralRulesCompiler.rule_to_js(rule_str)
             hash = eval(ruby_str)
-            "{\"keys\": #{hash[@locale][:i18n][:plural][:keys].to_json}, \"rule\": #{js_str}}"
+            %Q({"keys": #{hash[@locale][:i18n][:plural][:keys].to_json}, "rule": #{js_str}})
           end
         end
 

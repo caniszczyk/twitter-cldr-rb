@@ -5,9 +5,9 @@
 
 describe("PluralRules", function() {
   describe("#all", function() {
-		it("returns an array of all English plural rules", function() {
-		  expect(TwitterCldr.PluralRules.all()).toEqual(["one", "other"]);
-	  });
+    it("returns an array of all English plural rules", function() {
+      expect(TwitterCldr.PluralRules.all()).toEqual(["one", "other"]);
+    });
   });
 
   describe("#rule_for", function() {
