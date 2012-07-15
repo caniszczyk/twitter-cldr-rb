@@ -1,10 +1,15 @@
 --- 
 hu: 
-  days: 
-    other: "{0}n"
-  hours: 
-    other: "{0}ó"
-  minutes: 
-    other: "{0}p"
-  seconds: 
-    other: "{0}mp"
+  units: 
+    day: 
+      abbreviated: 
+        other: "{0}n"
+    hour: 
+      abbreviated: 
+        other: "{0}ó"
+    minute: 
+      abbreviated: 
+        other: "{0}p"
+    second: 
+      abbreviated: 
+        other: "{0}mp"

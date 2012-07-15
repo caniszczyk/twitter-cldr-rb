@@ -1,14 +1,19 @@
 --- 
 eu: 
-  days: 
-    one: "{0}e"
-    other: "{0}e"
-  hours: 
-    one: "{0}h"
-    other: "{0}h"
-  minutes: 
-    one: "{0}m"
-    other: "{0}m"
-  seconds: 
-    one: "{0}s"
-    other: "{0}s"
+  units: 
+    day: 
+      abbreviated: 
+        one: "{0}e"
+        other: "{0}e"
+    hour: 
+      abbreviated: 
+        one: "{0}h"
+        other: "{0}h"
+    minute: 
+      abbreviated: 
+        one: "{0}m"
+        other: "{0}m"
+    second: 
+      abbreviated: 
+        one: "{0}s"
+        other: "{0}s"

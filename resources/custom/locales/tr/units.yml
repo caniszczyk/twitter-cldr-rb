@@ -1,10 +1,15 @@
 --- 
 tr: 
-  days: 
-    other: "{0} gün"
-  hours: 
-    other: "{0} sa"
-  minutes: 
-    other: "{0} dk"
-  seconds: 
-    other: "{0} sn"
+  units: 
+    day: 
+      abbreviated: 
+        other: "{0} gün"
+    hour: 
+      abbreviated: 
+        other: "{0} sa"
+    minute: 
+      abbreviated: 
+        other: "{0} dk"
+    second: 
+      abbreviated: 
+        other: "{0} sn"

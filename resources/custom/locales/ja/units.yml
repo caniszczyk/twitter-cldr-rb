@@ -1,10 +1,15 @@
 --- 
 ja: 
-  days: 
-    other: "{0}日"
-  hours: 
-    other: "{0}時間"
-  minutes: 
-    other: "{0}分"
-  seconds: 
-    other: "{0}秒"
+  units: 
+    day: 
+      abbreviated: 
+        other: "{0}日"
+    hour: 
+      abbreviated: 
+        other: "{0}時間"
+    minute: 
+      abbreviated: 
+        other: "{0}分"
+    second: 
+      abbreviated: 
+        other: "{0}秒"

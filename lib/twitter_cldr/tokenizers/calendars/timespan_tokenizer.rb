@@ -17,7 +17,6 @@ module TwitterCldr
             { :type => :plaintext, :regex => // }
         ]
         @base_path = [:units]
-        @type = options[:type]
         @paths = {
             :ago => {
                 :default => :'hour-past',
@@ -53,9 +52,8 @@ module TwitterCldr
       end
 
       def tokens(options = {})
-        path = full_path(options[:direction], options[:unit])
+        path = full_path(options[:direction], options[:unit], options[:type])
         pluralization = options[:rule] || TwitterCldr::Formatters::Plurals::Rules.rule_for(options[:number], @locale)
-        path << @type
 
         case pluralization # sometimes the plural rule will return ":one" when the resource only contains a path with "1"
           when :zero
@@ -75,10 +73,14 @@ module TwitterCldr
         true if @@token_cache.include?(cache_key) || traverse(path)
       end
 
+      def all_types_for(unit, direction)
+        traverse(@base_path + [@paths[direction][unit]]).keys
+      end
+
       protected
 
-      def full_path(direction, unit)
-        @base_path + [@paths[direction][unit]]
+      def full_path(direction, unit, type)
+        @base_path + [@paths[direction][unit], type]
       end
 
       def init_resources
