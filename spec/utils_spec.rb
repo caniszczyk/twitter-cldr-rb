@@ -30,6 +30,37 @@ describe TwitterCldr::Utils do
 
   end
 
+  describe "#deep_merge" do
+    it "combines two non-nested hashes with different keys" do
+      first = { :foo => "bar" }
+      TwitterCldr::Utils.deep_merge!(first, { :bar => "baz" }).should == { :foo => "bar", :bar => "baz" }
+    end
+
+    it "combines two non-nested hashes with the same keys" do
+      first = { :foo => "bar" }
+      TwitterCldr::Utils.deep_merge!(first, { :foo => "baz" }).should == { :foo => "baz" }
+    end
+
+    it "combines two nested hashes" do
+      first = { :foo => "bar", :second => { :bar => "baz", :twitter => "rocks" } }
+      second = { :foo => "baz", :third => { :whassup => "cool" }, :second => { :twitter => "rules" } }
+      TwitterCldr::Utils.deep_merge!(first, second)
+      first.should == { :foo => "baz", :second => { :bar => "baz", :twitter => "rules" }, :third => { :whassup => "cool" } }
+    end
+
+    it "replaces arrays" do
+      first = [1, 2, 3]
+      TwitterCldr::Utils.deep_merge!(first, [4, 5, 6]).should == [4, 5, 6]
+    end
+
+    it "merges a nested hash with a few array replacements" do
+      first = { :foo => "bar", :second => { :bar => "baz", :twitter => [1, 2, 3] } }
+      second = { :foo => [18], :third => { :whassup => "cool" }, :second => { :twitter => [4, 5, 6] } }
+      TwitterCldr::Utils.deep_merge!(first, second)
+      first.should == { :foo => [18], :second => { :bar => "baz", :twitter => [4, 5, 6] }, :third => { :whassup => "cool" } }
+    end
+  end
+
   describe "#compute_cache_key" do
     it "returns a ruby hash of all the pieces concatenated with pipe characters" do
       TwitterCldr::Utils.compute_cache_key("space", "the", "final", "frontier").should == "space|the|final|frontier".hash

@@ -14,6 +14,7 @@ Gem::Specification.new do |s|
   s.summary  = "Text formatting using data from Unicode's Common Locale Data Repository (CLDR)."
 
   s.add_dependency 'json', '>= 1.1.9'
+
   s.require_path = 'lib'
 
   gem_files       = Dir["{js,lib,spec,resources}/**/*", "Gemfile", "History.txt", "LICENSE", "NOTICE", "README.md", "Rakefile", "twitter_cldr.gemspec"]
